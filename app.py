@@ -33,16 +33,6 @@ if choice == "View Data":
     st.dataframe(df)
 elif choice == "Visualize Data":
     st.header("Visualization")
-    # scol = st.sidebar.radio("Select a column",df.columns)
-    # st.write(f"### Visulaizing {scol}")
-    # if df[scol].dtype == "object":
-    #     total_unique_values = df[scol].nunique()
-    #     st.write(f"Total Unique Values: {total_unique_values}")
-    # elif df[scol].dtype == "int64":
-    #     st.write(f"Min Value: {df[scol].min()}")
-    #     st.write(f"Max Value: {df[scol].max()}")
-    #     st.write(f"Mean Value: {df[scol].mean()}")
-
     cat_cols = df.select_dtypes(include="object").columns.tolist()
     num_cols = df.select_dtypes(exclude="object").columns.tolist()
     cat_cols.remove("Name")
